@@ -1,0 +1,62 @@
+name: 🐛 Bug Report
+description: Report a broken conversion, UI glitch, or browser incompatibility in PixelForge.
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue to **PixelForge**, maintained by [SPManchester Private Limited](https://www.spmanchester.com).
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which Tool is Affected?
+      description: Select the converter experiencing the issue.
+      options:
+        - "Hub Portal (index.html)"
+        - "PNG Converters (png-to-*)"
+        - "JPG Converters (jpg-to-*)"
+        - "WebP Converters (webp-to-*)"
+        - "SVG Converters (svg-to-*)"
+        - "BMP Converters (bmp-to-*)"
+        - "GIF Converters (gif-to-*)"
+        - "ICO Converters (ico-to-*)"
+        - "AVIF Converters (avif-to-*)"
+        - "Base64 Converters (base64-to-*)"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: When I drag in an image to convert, the queue does not update...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can the maintainers reproduce this behavior?
+      value: |
+        1. Open '...'
+        2. Upload a file formatted as '...' with resolution '...'
+        3. Click 'Convert'
+        4. See error
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser & OS
+      description: e.g. Chrome 124 on macOS Sonoma, Safari 17 on iOS 17.4
+      placeholder: Chrome 125 on Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: console-log
+    attributes:
+      label: Browser Console Log / Errors
+      description: Paste any JavaScript console errors or warnings here.
+      render: shell

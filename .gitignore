@@ -1,0 +1,41 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Node & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Build & Output Caches
+dist/
+build/
+.cache/
+tmp/
+temp/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Archives and Temporary Bundles (retain official distribution ZIPs if intentional, or ignore ad-hoc zip extracts)
+*.tar.gz
+*.bak

@@ -1,0 +1,17 @@
+services:
+  pixelforge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: spmanchester/pixelforge:latest
+    container_name: pixelforge-image-converters
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:80"
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "com.spmanchester.vendor=SPManchester Private Limited"
+      - "com.spmanchester.project=PixelForge"
+      - "com.spmanchester.author=Sayed Mudassar Akbar"
+      - "com.spmanchester.website=https://www.spmanchester.com"

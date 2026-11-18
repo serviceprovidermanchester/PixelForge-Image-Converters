@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🏢 SPManchester Private Limited Official Website
+    url: https://www.spmanchester.com
+    about: Explore enterprise software engineering and bespoke tech consulting.
+  - name: ✉️ Enterprise Support & Security Desk
+    url: mailto:info@spmanchester.com
+    about: Direct private communication with SPManchester engineering team.
+  - name: 💬 GitHub Discussions
+    url: https://github.com/serviceprovidermanchester/PixelForge-Image-Converters/discussions
+    about: Ask questions, share ideas, and discuss client-side media architectures.

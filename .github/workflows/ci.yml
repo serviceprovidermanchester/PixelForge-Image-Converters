@@ -1,0 +1,46 @@
+name: CI Code Quality & Format Integrity
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate:
+    name: Repository Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify Tools Manifest Integrity
+        run: |
+          python3 -c "
+          import json, os
+          with open('manifest.json') as f:
+              manifest = json.load(f)
+          print(f'Checking {len(manifest)} tools...')
+          assert len(manifest) == 60, f'Expected 60 tools, found {len(manifest)}'
+          for tool in manifest:
+              slug = tool['slug']
+              assert os.path.isdir(slug), f'Directory missing: {slug}'
+              assert os.path.isfile(os.path.join(slug, 'index.html')), f'index.html missing in {slug}'
+              assert os.path.isfile(os.path.join(slug, 'app.js')), f'app.js missing in {slug}'
+              assert os.path.isfile(os.path.join(slug, 'style.css')), f'style.css missing in {slug}'
+          print('All 60 tools verified successfully!')
+          "
+
+      - name: Verify Root Files
+        run: |
+          test -f index.html || exit 1
+          test -f README.md || exit 1
+          test -f LICENSE || exit 1
+          test -f CONTRIBUTING.md || exit 1
+          test -f SECURITY.md || exit 1
+          echo "Core root governance files are verified."

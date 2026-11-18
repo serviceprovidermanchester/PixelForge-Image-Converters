@@ -1,0 +1,46 @@
+{
+  "name": "pixelforge-image-converters",
+  "version": "1.0.0",
+  "description": "Enterprise-grade suite of 60 client-side in-browser image converters. Zero uploads, zero server overhead, 100% private. Built by SPManchester Private Limited.",
+  "author": "Sayed Mudassar Akbar <info@spmanchester.com> (https://www.spmanchester.com)",
+  "maintainers": [
+    {
+      "name": "SPManchester Private Limited",
+      "email": "info@spmanchester.com",
+      "url": "https://www.spmanchester.com"
+    }
+  ],
+  "homepage": "https://www.spmanchester.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serviceprovidermanchester/PixelForge-Image-Converters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/serviceprovidermanchester/PixelForge-Image-Converters/issues",
+    "email": "info@spmanchester.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "image-converter",
+    "png-to-jpg",
+    "webp-to-png",
+    "client-side",
+    "privacy-first",
+    "zero-upload",
+    "in-browser",
+    "canvas-api",
+    "svg-converter",
+    "avif-converter",
+    "spmanchester",
+    "offline-first"
+  ],
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "serve": "npx serve -l 3000 .",
+    "lint": "npx htmlhint \"**/*.html\""
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
